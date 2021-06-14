@@ -7,6 +7,20 @@
 #define io_unsync ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 using namespace std;
 
+/// if the requirement is for contiguous queries (like max subarray sum, substring etc, use len = some power of 2 only).
+
+uint ceilp2(uint n)
+{
+    n--;
+    n |= n >> 1;
+    n |= n >> 2;
+    n |= n >> 4;
+    n |= n >> 8;
+    n |= n >> 16;
+    n |= n >> 32;
+    return ++n;
+}
+
 int tree[N << 1];
 
 /// Segment Tree definition
